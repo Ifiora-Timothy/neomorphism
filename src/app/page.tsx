@@ -32,14 +32,14 @@ export default function Home() {
               </span>
               <span className="absolute -right-[25px] top-[10px]">km</span>{" "}
             </p>
-            <div className="absolute sm:w-full row-[2/5]  mt-4 -right-[200px] sm:size-full sm:flex sm:justify-center sm:right-[70px] top-0 z-10">
+            <div className="absolute caronea sm:w-full row-[2/5]  mt-4 -right-[200px] sm:size-full sm:flex sm:justify-center sm:right-[70px] top-0 z-10">
               <Image
                 src="/tesla.png"
                 alt="tesla car image"
                 height={255}
                 width={807}
                 priority
-                className="sm:h-[200px] h-[240px] block w-[600px] sm:w-[500px]   lg:w-[607px] object-contain"
+                className="sm:h-[200px]   h-[240px] block w-[600px] sm:w-[500px]   lg:w-[607px] object-contain"
               />
             </div>
           </div>

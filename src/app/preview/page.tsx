@@ -67,7 +67,7 @@ const page = async (props: Props) => {
               height={277}
               width={507}
               priority
-              className=" justify-self-end  col-span-4 overflow-visible block h-[217px]  w-[497px] object-contain"
+              className="cartwoa justify-self-end  col-span-4 overflow-visible block h-[217px]  w-[497px] object-contain"
             />
             <div className=" hidden sm:flex justify-end absolute   right-[50px] w-full h-full ">
               <CircularProgress className="justify-self-end w-fit" size={150} />
