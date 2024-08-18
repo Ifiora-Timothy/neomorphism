@@ -2,32 +2,311 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --slate-text: 210 4% 52% / 100%;
+    --white: #fdfdfd;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.buttonGradient {
+  border-radius: 100%;
+  background: linear-gradient(-42deg, #2c3036 0%, #31343c 100%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7f8489;
+
+  flex-shrink: 0;
+  /* box-shadow: 7px 7px 30px 0px #1f2427, -7px -7px 30px 0px #485057; */
+}
+
+.buttonGradient:hover {
+  transform: scale(1.05);
+  filter: blur(0);
+  /* Remove blur on hover */
+}
+
+.buttonGradient:active {
+  transform: scale(0.95);
+  /* Scale down on click */
+  filter: blur(0);
+  /* Remove blur on click */
+}
+
+.bgblur {
+  height: 63px;
+  width: 63px;
+  filter: blur(1px);
+  background: linear-gradient(-42deg, #2c3036 0%, #31343c 100%);
+  border-radius: 100%;
+  transition: background 0.3s ease;
+}
+
+.buttonGradient:hover .bgblur {
+  background: linear-gradient(-42deg, #23262b 0%, #2b2e36 100%);
+}
+
+.smbtn {
+  background: linear-gradient(-39deg, #2f353a 0%, #1c1f22 100%);
+  border-radius: 100%;
+  height: 57px;
+  width: 57px;
+}
+
+.smblur {
+  height: 57px;
+  width: 57px;
+  filter: blur(1px);
+  background: linear-gradient(-39deg, #25282a 0%, #43464f 100%);
+  border-radius: 100%;
+}
+
+.blueButton {
+  --color1: #1b5d8d;
+  --color2: #2363a1;
+  --childColor1: #0c82cf;
+  --childColor2: #16425d;
+
+  background: linear-gradient(-31deg, var(--color1) 0%, var(--color2) 100%);
+  filter: blur(0.5px);
+  width: 72px;
+  height: 72px;
+  padding: 4px;
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  position: relative;
+}
+
+.mainBlue:hover {
+  transform: scale(1.05);
+  filter: blur(0);
+  /* Remove blur on hover */
+}
+
+.mainBlue:active {
+  transform: scale(0.95);
+  /* Scale down on click */
+  filter: blur(0);
+  /* Remove blur on click */
+}
+
+.blueChild {
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    -31deg,
+    var(--childColor1) 0%,
+    var(--childColor2) 100%
+  );
+  width: 100%;
+  height: 100%;
+  transition: background 0.3s ease;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.mainBlue:hover .blueChild {
+  outline: 0;
+  cursor: pointer;
+  box-shadow: inset 3px 3px 5px var(--color1), inset -3px -3px 5px var(--color1) !important;
+}
+
+.button-content {
+  transition: color 0.3s ease;
+}
+
+.mainBlue:active .button-content {
+  color: #ffffff;
+  /* Change text color on click */
+}
+
+.circular-progress {
+  --half-size: calc(var(--size) / 2);
+  --progress: 20;
+  --stroke-width: 35px;
+  --radius: calc((var(--size) - var(--stroke-width)) / 2);
+  --circumference: calc(var(--radius) * pi * 2);
+  --dash: calc((var(--progress) * var(--circumference)) / 100);
+  animation: progress-animation 5s linear 0s 1 forwards;
+}
+
+.circular-progress circle {
+  cx: var(--half-size);
+  cy: var(--half-size);
+  r: var(--radius);
+  stroke-width: var(--stroke-width);
+  fill: transparent;
+  stroke-linecap: round;
+}
+
+.circular-progress circle.bg {
+  stroke: #1f2124;
+}
+
+.circular-progress circle.fg {
+  fill: transparent;
+  transform: rotate(90deg);
+  transform-origin: var(--half-size) var(--half-size);
+  stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+  transition: stroke-dasharray 0.3s linear 0s;
+}
+
+.circular-progress circle.dot {
+  cx: 18px;
+  r: 9px;
+  fill: #5394fd;
+  stroke-width: 13px;
+  transform: rotate(var(--dotposition));
+  transform-origin: var(--half-size) var(--half-size);
+  stroke-dasharray: calc(var(--dash) + 1px)
+    calc(var(--circumference) - var(--dash));
+  transition: stroke-dasharray 0.3s linear 0s;
+  stroke: #1f2124;
+}
+
+.circleWrapper {
+  box-shadow: 7px 7px 30px 0px #16191b, -10px -10px 30px 0px #485057;
+}
+
+.mMainFill {
+  background: linear-gradient(0deg, #353a40 0%, #222328 100%);
+}
+.mMainShadow {
+  box-shadow: 14px 14px 40px 0px rgba(16, 16, 18, 0.75),
+    -7px -7px 20px 0px #262e32;
+}
+@media screen and (max-width: 500px) {
+  .mMainShadow {
+    box-shadow: none;
   }
+}
+
+.mMainFill:hover {
+  opacity: 1;
+}
+.mMainFill:hover .card {
+  opacity: 0.8;
+}
+
+.button {
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border: 1px solid #2363a1;
+  border-radius: 10px;
+  background: #16191b;
+  box-shadow: inset 3px 3px 7px #515457, inset -3px -3px 7px #111516;
+}
+
+.button:hover {
+  border: 1px solid black;
+  outline: 0;
+  cursor: pointer;
+  background: #23262b;
+  box-shadow: inset 3px 3px 5px #434748, inset -3px -3px 5px #433d3d;
+}
+
+.button:focus {
+  outline: 0;
+}
+.toast {
+  max-width: 350px;
+  padding: 1rem 1.3rem;
+  overflow: hidden;
+  background-clip: padding-box;
+
+  /* Dark background with subtle blue tint */
+  background-color: #2e2e2e;
+  border-radius: 10px;
+
+  /* Dark neomorphism shadows */
+  box-shadow: 3px 3px 7px #1a1a1a, -3px -3px 7px #444444;
+}
+
+.toast.show {
+  display: block;
+  opacity: 1;
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  background-clip: padding-box;
+
+  /* Border color to match dark theme */
+  border-bottom: 1px solid;
+  border-color: #555555;
+}
+
+.toast-body {
+  font-size: 1rem;
+  padding: 1rem 0.75rem 0.25rem 0.75rem;
+  color: #e0e0e0; /* Light text for readability on dark background */
 }
