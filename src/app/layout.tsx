@@ -9,7 +9,7 @@ import { MainContextProvider } from "@/context/MainContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Car Hero Animation",
+  title: "Neomorphism mobile and desktop UI",
   description: "Designed and developed by Techdoc",
   metadataBase: new URL("https://weekly-issue2-neomorphism.vercel.app"),
   openGraph: {
